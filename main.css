@@ -36,11 +36,23 @@ h1 {
 
 .grid div {
   border: 1px solid lightgrey;
+  flex-wrap: wrap;
   flex-grow: 1;
   height: 33.333%;
   width: 33.333%;
 }
 
+.bigBoard {
+  display: flex;
+  border: 1px solid lightgrey;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.innerBoard {
+  height: 33.333%;
+  width: 33.333%;
+}
 button {
   display: inline;
   margin: 20px;

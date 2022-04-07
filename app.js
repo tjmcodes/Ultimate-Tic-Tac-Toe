@@ -11,15 +11,23 @@ const player2 = ('O')
 function createGrid() {
   for (let index = 0; index < cellCount; index++) {
     const cell = document.createElement('div')
+    cell.classList.add('bigBoard')
     for (let index = 0; index < cellCount; index++) {
-      const innerCell = document.createElement('div')
-      cell.appendChild(innerCell)
-      console.log(innerCell)
+      const boards = document.createElement('div')
+      
+      boards.classList.add('innerBoard')
+
+      cell.appendChild(boards)
+      boards.addEventListener('click', () => {
+      
+        boards.classList.toggle(player1)
+      
+        boards.innerHTML = 'X'
+        console.log(player1)
+      })
+      console.log(boards)
     }
-    cell.addEventListener('click', () => {
-      cell.classList.toggle(player1)
-      console.log(player1)
-    })
+    
     console.log(player1)
     grid.appendChild(cell)
     
