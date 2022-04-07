@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: large;
+  text-align: center;
+}
+
+.grid-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  align-items: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  height: 600px;
+  width: 600px;
+}
+
+.grid div {
+  border: 1px solid lightgrey;
+  flex-grow: 1;
+  height: 33.333%;
+  width: 33.333%;
+}
+
+button {
+  display: inline;
+  margin: 20px;
+}
