@@ -50,9 +50,18 @@ h1 {
 }
 
 .innerBoard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 33.333%;
   width: 33.333%;
 }
+
+.squares {
+  font-size: xx-large;
+}
+
+
 button {
   display: inline;
   margin: 20px;

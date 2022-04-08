@@ -1,40 +1,66 @@
 // Create Grid
-
+const restartGame = document.querySelector('button')
 const grid = document.querySelector('.grid')
 const width = 3
 const cellCount = width * width
-let player1 = ('X')
-const player2 = ('O')
+let playerTurn = ('X')
 
 
+
+const swapTurns = function() {
+  // Swap current player
+  if (playerTurn === 'X') {
+    playerTurn = 'O'; 
+  }  else {
+    playerTurn = 'X'; 
+  }
+};
 
 function createGrid() {
+// creating an element div and adding a class called 'biBoard' with 9 squares
   for (let index = 0; index < cellCount; index++) {
     const cell = document.createElement('div')
     cell.classList.add('bigBoard')
-    for (let index = 0; index < cellCount; index++) {
-      const boards = document.createElement('div')
-      
-      boards.classList.add('innerBoard')
 
-      cell.appendChild(boards)
-      boards.addEventListener('click', () => {
+// creating an element div (inside the bigBoard div loop) and adding a class called 'innerboard' with 9 squares
+    for (let index = 0; index < cellCount; index++) {
+      const squares = document.createElement('div')
+      // add class to style
+      squares.classList.add('innerBoard')
+      // add the 
+      cell.appendChild(squares)
+
+      squares.addEventListener('click', () => {
       
-        boards.classList.toggle(player1)
+        // add class to style
+        squares.classList.toggle(playerTurn)
       
-        boards.innerHTML = 'X'
-        console.log(player1)
+        // inserts innerHTML then calls the swapTurns function
+        squares.innerHTML = (playerTurn)
+        swapTurns()
+        
+        restartGame.addEventListener('click', () => {
+          squares.innerHTML = ''
+        })
+
+        console.log(squares)
       })
-      console.log(boards)
+      
+
+      // console.log(squares)
     }
-    
-    console.log(player1)
+  
     grid.appendChild(cell)
+
+    
     
   }
 }
-console.log(grid);
+// console.log(grid);
 createGrid()  
+
+
+
 
 // click event
 // const cells = document.querySelectorAll('cell')
