@@ -49,7 +49,7 @@ h1 {
   flex-grow: 1;
 }
 
-.innerBoard {
+.innerBoards {
   display: flex;
   align-items: center;
   justify-content: center;
