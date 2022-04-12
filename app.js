@@ -3,6 +3,12 @@ const restartGame = document.querySelector('button')
 const grid = document.querySelector('.grid')
 const width = 3
 const cellCount = width * width
+
+// DISPLAY
+const modal = document.querySelector('#myModal')
+const closeMessage = document.querySelector(".close")
+
+
 let playerTurn = ('X')
 
 // Winning Combinations
@@ -24,26 +30,21 @@ const winningCombinations = [
   [0,4,8],
   [2,4,6]
 ];
+
 const checkIfWin = playerArray =>
   winningCombinations.filter(possibility =>
     possibility.every(index => playerArray.includes(index))
   ).length > 0;
-
-
-// const checkIfWin = playerArray => {
-//   winningCombinations.filter(possibility =>
-//   // possibility.every(index => playerArray.includes(index))
-//     possibility.every(index => {
-//       console.log(playerArray.includes(index))
-//     })
-//   ).length > 0
-// };           
+          
 
 const gameWon = function(){
   if (checkIfWin === true) {
-    alert("Winner")
+    alert(modal)
   }
 }
+
+
+
 
 // GAME VARIABLES
 const swapTurns = function() {
@@ -55,13 +56,58 @@ const swapTurns = function() {
   }
 };
 
+// GAME PLAY
+function playGame(event, squares)   {      
+  // if winner
+  // const gameWon = 
+        
+        
+  // if no winner 
+  if (squares.innerHTML.length === 0) {
+    squares.innerHTML = (playerTurn)
+    if (squares.innerHTML === ('X')) {
+      playerArray1.push(parseInt(squares.id))
+
+      // If winner:
+      // console.log(checkIfWin(playerArray1))
+      if (checkIfWin(playerArray1) === true)
+        setTimeout(() => alert("Player 1 winner"),50)
+            
+      // console.log(playerArray1)
+    } else {
+      // Pushing the 'O' into player array and checking win combinations.
+      squares.innerHTML === ('O')
+      playerArray2.push(parseInt(squares.id))
+      // console.log(checkIfWin(playerArray2))
+      if (checkIfWin(playerArray2) === true)
+        setTimeout(() => alert("Player 2 winner"), 50)               
+    }
+    swapTurns()
+        
+        
+    // inValid move
+    // } else {
+    //   squares.removeEventListener('click', (event) => {
+    //     squares.innerHTML
+    //   })
+                  
+  }
+        
+  // clears the innerBoards squares
+  restartGame.addEventListener('click', () => {
+    squares.innerHTML = ''
+  })
+
+  console.log(event.target.innerHTML)
+}
+
 // GAME SET UP / PLAY
 
 function createGrid() {
-// creating an element div and adding a class called 'bigBoard' with 9 cells
+// creating an element div and adding a class called 'bigBoard' with 9 grids
   for (let index = 0; index < cellCount; index++) {
-    const cell = document.createElement('div')
-    cell.classList.add('bigBoard')
+    const grids = document.createElement('div')
+    grids.classList.add('bigBoard')
 
     // creating an element div (inside the bigBoard div loop) and adding a class called 'innerboard' with 9 squares
     for (let index = 0; index < cellCount; index++) {
@@ -72,64 +118,17 @@ function createGrid() {
       squares.setAttribute('id', index)
       console.log(squares)
 
-      // add the squares
-      cell.appendChild(squares)
+      // Add the squares
+      grids.appendChild(squares)
 
       // Game Play
-      squares.addEventListener('click', (event) => {       
-        // if winner
-        // const gameWon = 
-        
-        
-        // if no winner 
-        if (squares.innerHTML.length === 0) {
-          squares.innerHTML = (playerTurn)
-          if (squares.innerHTML === ('X')) {
-            playerArray1.push(parseInt(squares.id))
-
-            // If winner:
-            // console.log(checkIfWin(playerArray1))
-            if (checkIfWin(playerArray1) === true)
-              alert("Player 1 winner")
-            
-            // console.log(playerArray1)
-          } else {
-            // Pushing the 'O' into player array and checking win combinations.
-            squares.innerHTML === ('O')
-            playerArray2.push(parseInt(squares.id))
-            // console.log(playerArray2)
-            // console.log(checkIfWin(playerArray2))
-            if (checkIfWin(playerArray2) === true)
-              alert("Player 2 winner")               
-          }
-          swapTurns()
-        
-        
-          // inValid move
-        // } else {
-        //   squares.removeEventListener('click', (event) => {
-        //     squares.innerHTML
-        //   })
-                  
-        }
-        
-        // clears the innerBoards squares
-        restartGame.addEventListener('click', () => {
-          squares.innerHTML = ''
-        })
-
-        console.log(event.target.innerHTML)
-      })
-      
-
+      squares.addEventListener('click',(event) => playGame(event, squares))
+    
       // console.log(squares)
     }
-  
-    grid.appendChild(cell)
-
-    
-    
+    grid.appendChild(grids) 
   }
 }
 // console.log(grid);
 createGrid()
+
