@@ -13,15 +13,19 @@ const closeMessage = document.querySelector(".close")
 
 let playerTurn = ('X')
 
+
+
 // Winning Combinations
 
 // loop through each of winning combinations === playerArray1/2
 // check if in numberical order
 
-const innerBoards = [0,1,2,3,4,5,6,7,8]
+const bigBoards = [0,1,2,3,4,5,6,7,8]
 
 const playerArray1 = []
 const playerArray2 = []
+let lastTurn = 0
+
 
 const winningCombinations = [
   [0,1,2],
@@ -34,6 +38,8 @@ const winningCombinations = [
   [2,4,6]
 ];
 
+
+// GAME WON
 const checkIfWin = playerArray =>
   winningCombinations.filter(possibility =>
     possibility.every(index => playerArray.includes(index))
@@ -59,11 +65,15 @@ const swapTurns = function() {
   }
 };
 
+
+
 // GAME PLAY (The click event passes through events and squares as argument and is called here)
-function playGame(event, squares)   {              
+function playGame(event, squares) {              
   // if no winner 
-  if (squares.innerHTML.length === 0) {
+  console.log(event.target.id)
+  if (squares.innerHTML.length === 0 && (lastTurn === parseInt(event.target.parentElement.id))) {
     squares.innerHTML = (playerTurn)
+
     if (squares.innerHTML === ('X')) {
       playerArray1.push(parseInt(squares.id))
 
@@ -81,6 +91,11 @@ function playGame(event, squares)   {
       if (checkIfWin(playerArray2) === true)
         setTimeout(() => alert("Player 2 winner"), 50)               
     }
+    lastTurn = parseInt(event.target.id)
+
+    // playerArray1.length + playerArray2.length === 9; {
+    //   setTimeout(() => alert("Board not won"))
+    // } 
 
     swapTurns()        
         
@@ -90,14 +105,19 @@ function playGame(event, squares)   {
     //     squares.innerHTML
     //   })                  
   }
+  
         
   // clears the innerBoards squares
+ 
+
   restartGame.addEventListener('click', () => {
     squares.innerHTML = ''
   })
 
   console.log(event.target.innerHTML)
 }
+
+
 
 // GAME SET UP / PLAY
 
@@ -128,6 +148,8 @@ function createGrid() {
     }
     grid.appendChild(grids) 
     console.log(grids);
+
+    
   }
 }
 

@@ -15,13 +15,13 @@ h1 {
   font-size: large;
   text-align: center;
 }
-
+/* 
 .grid-wrapper {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .grid {
   align-items: center;
@@ -53,8 +53,8 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 33.333%;
-  width: 33.333%;
+  /* height: 33.333%;
+  width: 33.333%; */
 }
 
 .squares {
@@ -66,5 +66,4 @@ button {
   display: inline;
   margin: 20px;
 }
-
 
