@@ -15,13 +15,13 @@ h1 {
   font-size: large;
   text-align: center;
 }
-/* 
+
 .grid-wrapper {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+}
 
 .grid {
   align-items: center;
@@ -42,24 +42,22 @@ h1 {
   width: 33.333%;
 }
 
-.bigBoard {
+.grids {
   display: flex;
   border: 1px solid lightgrey;
   flex-wrap: wrap;
   flex-grow: 1;
 }
 
-.innerBoards {
+.cells {
   display: flex;
   align-items: center;
   justify-content: center;
   /* height: 33.333%;
   width: 33.333%; */
-}
-
-.squares {
   font-size: xx-large;
 }
+
 
 
 button {

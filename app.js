@@ -5,26 +5,39 @@ const width = 3
 const cellCount = width * width
 
 
-
-// DISPLAY
-const modal = document.querySelector('#myModal')
-const closeMessage = document.querySelector(".close")
-
-
+// GAME VARIABLES
 let playerTurn = ('X')
 
+const swapTurns = function() {
+  // Swap current player
+  if (playerTurn === 'X') {
+    playerTurn = 'O'; 
+  }  else {
+    playerTurn = 'X'; 
+  }
+};
 
-
-// Winning Combinations
-
-// loop through each of winning combinations === playerArray1/2
-// check if in numberical order
-
-const bigBoards = [0,1,2,3,4,5,6,7,8]
+// const bigBoards = [0,1,2,3,4,5,6,7,8]
 
 const playerArray1 = []
 const playerArray2 = []
 let lastTurn = 0
+
+const firstMove = function() {
+  if (grid === 0) {
+    playerTurn
+  } else {
+    lastTurn === parseInt(event.target.parentElement.id)
+  }
+}
+
+
+// WINNING COMBINATIONS
+
+// loop through each of winning combinations === playerArray1/2
+// check if in numberical order
+
+
 
 
 const winningCombinations = [
@@ -52,30 +65,26 @@ const gameWon = function(){
   }
 }
 
+// DISPLAY
+// const modal = document.querySelector('#myModal')
+// const closeMessage = document.querySelector(".close")
 
 
 
-// GAME VARIABLES
-const swapTurns = function() {
-  // Swap current player
-  if (playerTurn === 'X') {
-    playerTurn = 'O'; 
-  }  else {
-    playerTurn = 'X'; 
-  }
-};
+
+// OPEN BOARD OPTION (CLICK)
 
 
 
-// GAME PLAY (The click event passes through events and squares as argument and is called here)
-function playGame(event, squares) {              
+// GAME PLAY (The click event passes through events and cell as argument and is called here)
+function playGame(event, cell) {              
   // if no winner 
   console.log(event.target.id)
-  if (squares.innerHTML.length === 0 && (lastTurn === parseInt(event.target.parentElement.id))) {
-    squares.innerHTML = (playerTurn)
+  if (cell.innerHTML.length === 0 && (lastTurn === parseInt(event.target.parentElement.id))) {
+    cell.innerHTML = (playerTurn)
 
-    if (squares.innerHTML === ('X')) {
-      playerArray1.push(parseInt(squares.id))
+    if (cell.innerHTML === ('X')) {
+      playerArray1.push(parseInt(cell.id))
 
       // If winner:
       console.log(checkIfWin(playerArray1))
@@ -85,8 +94,8 @@ function playGame(event, squares) {
       // console.log(playerArray1)
     } else {
       // Pushing the 'O' into player array and checking win combinations.
-      squares.innerHTML === ('O')
-      playerArray2.push(parseInt(squares.id))
+      cell.innerHTML === ('O')
+      playerArray2.push(parseInt(cell.id))
       console.log(checkIfWin(playerArray2))
       if (checkIfWin(playerArray2) === true)
         setTimeout(() => alert("Player 2 winner"), 50)               
@@ -101,20 +110,21 @@ function playGame(event, squares) {
         
     // inValid move
     // } else {
-    //   squares.removeEventListener('click', (event) => {
-    //     squares.innerHTML
+    //   cell.removeEventListener('click', (event) => {
+    //     cell.innerHTML
     //   })                  
   }
   
         
-  // clears the innerBoards squares
+  // clears the innerBoards cell
  
 
   restartGame.addEventListener('click', () => {
-    squares.innerHTML = ''
+    cell.innerHTML = ''
   })
 
   console.log(event.target.innerHTML)
+  console.log(event.target.parentElement)
 }
 
 
@@ -125,26 +135,27 @@ function createGrid() {
 // creating an element div and adding a class called 'bigBoard' with 9 grids
   for (let index = 0; index < cellCount; index++) {
     const grids = document.createElement('div')
-    grids.classList.add('bigBoard')
+    grids.classList.add('grids')
     grids.setAttribute('id', index)
     // console.log(grids)
 
-    // creating an element div (inside the bigBoard div loop) and adding a class called 'innerboard' with 9 squares
+    // creating an element div (inside the bigBoard div loop) and adding a class called 'innerboard' with 9 cell
     for (let index = 0; index < cellCount; index++) {
-      const squares = document.createElement('div')
+      const cell = document.createElement('div')
       // add class to style
-      squares.classList.add('innerBoards')
+      cell.classList.add('cells')
       // add id #
-      squares.setAttribute('id', index)
-      console.log(squares)
+      cell.setAttribute('id', index)
+      console.log(cell)
 
-      // Add the squares
-      grids.appendChild(squares)
+      // Add the cell
+      grids.appendChild(cell)
 
       // Game Play
-      squares.addEventListener('click',(event) => playGame(event, squares))
+      cell.addEventListener('click',(event) => playGame(event, cell))
+      
     
-      console.log(squares)
+      console.log(cell)
     }
     grid.appendChild(grids) 
     console.log(grids);
