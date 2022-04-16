@@ -21,22 +21,16 @@ const swapTurns = function() {
 
 const playerArray1 = []
 const playerArray2 = []
+// lastTurn should be line 109: lastTurn = parseInt(event.target.id) but cannot get because is in local scope
 let lastTurn = 0
+let gameStart = true
 
-const firstMove = function() {
-  if (grid === 0) {
-    playerTurn
-  } else {
-    lastTurn === parseInt(event.target.parentElement.id)
-  }
-}
 
 
 // WINNING COMBINATIONS
 
 // loop through each of winning combinations === playerArray1/2
 // check if in numberical order
-
 
 
 
@@ -51,12 +45,14 @@ const winningCombinations = [
   [2,4,6]
 ];
 
+// player1GridMoves[grid.id}.push(cell.id)]
 
 // GAME WON
 const checkIfWin = playerArray =>
   winningCombinations.filter(possibility =>
     possibility.every(index => playerArray.includes(index))
   ).length > 0;
+
           
 
 const gameWon = function(){
@@ -73,21 +69,40 @@ const gameWon = function(){
 
 
 // OPEN BOARD OPTION (CLICK)
-
+function clickAnywhere(event, cell) {
+  return (
+    (cell.innerHTML.length === 0) && 
+    ((gameStart) || lastTurn === parseInt(event.target.parentElement.id))
+  )
+}
 
 
 // GAME PLAY (The click event passes through events and cell as argument and is called here)
 function playGame(event, cell) {              
   // if no winner 
-  console.log(event.target.id)
-  if (cell.innerHTML.length === 0 && (lastTurn === parseInt(event.target.parentElement.id))) {
+  // console.log(event.target.id)
+  
+  // lastTurn = 0. This number represents the parentElement.Id which is why the top left board is selected for the player to play.
+  // This block runs and then at line 106 lastTurn becomes the cell.id number and runs again. 
+  // How do you start game though? 
+  // Create another function??
+
+  // If game has started ignore lastTurn
+  const gridId = cell.parentElement.id
+  const cellId = cell.id
+
+  if (clickAnywhere(event, cell)) {
     cell.innerHTML = (playerTurn)
+    gameStart = false
+    
+    
+  
 
     if (cell.innerHTML === ('X')) {
-      playerArray1.push(parseInt(cell.id))
+      playerArray1[gridId].push(parseInt(cellId))
 
       // If winner:
-      console.log(checkIfWin(playerArray1))
+      // console.log(checkIfWin(playerArray1))
       if (checkIfWin(playerArray1) === true)
         setTimeout(() => alert("Player 1 winner"),50)
             
@@ -95,41 +110,38 @@ function playGame(event, cell) {
     } else {
       // Pushing the 'O' into player array and checking win combinations.
       cell.innerHTML === ('O')
-      playerArray2.push(parseInt(cell.id))
+      playerArray2[gridId].push(parseInt(cellId))
+      
       console.log(checkIfWin(playerArray2))
       if (checkIfWin(playerArray2) === true)
         setTimeout(() => alert("Player 2 winner"), 50)               
     }
-    lastTurn = parseInt(event.target.id)
+    
 
     // playerArray1.length + playerArray2.length === 9; {
     //   setTimeout(() => alert("Board not won"))
     // } 
 
+    lastTurn = parseInt(event.target.id) 
+    console.log(event.target.id) //cell id
+
     swapTurns()        
-        
-    // inValid move
-    // } else {
-    //   cell.removeEventListener('click', (event) => {
-    //     cell.innerHTML
-    //   })                  
+                        
   }
   
         
   // clears the innerBoards cell
- 
-
   restartGame.addEventListener('click', () => {
     cell.innerHTML = ''
   })
-
+  // console.log(playGame(event, cell))
   console.log(event.target.innerHTML)
   console.log(event.target.parentElement)
 }
 
 
 
-// GAME SET UP / PLAY
+// GAME SET UP / CLICK EVENT TO PLAY
 
 function createGrid() {
 // creating an element div and adding a class called 'bigBoard' with 9 grids
@@ -148,19 +160,15 @@ function createGrid() {
       cell.setAttribute('id', index)
       console.log(cell)
 
-      // Add the cell
+      // Add the cells
       grids.appendChild(cell)
 
-      // Game Play
+      // Game Play - Click Event on the cell to begin play
       cell.addEventListener('click',(event) => playGame(event, cell))
-      
-    
       console.log(cell)
     }
     grid.appendChild(grids) 
     console.log(grids);
-
-    
   }
 }
 
