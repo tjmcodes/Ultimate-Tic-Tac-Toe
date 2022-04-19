@@ -19,8 +19,10 @@ const swapTurns = function() {
 
 // const bigBoards = [0,1,2,3,4,5,6,7,8]
 
-const playerArray1 = []
-const playerArray2 = []
+const playerArray1 = [[],[],[],[],[],[],[],[],[]]
+const playerArray2 = [[],[],[],[],[],[],[],[],[]]
+
+
 // lastTurn should be line 109: lastTurn = parseInt(event.target.id) but cannot get because is in local scope
 let lastTurn = 0
 let gameStart = true
@@ -55,11 +57,11 @@ const checkIfWin = playerArray =>
 
           
 
-const gameWon = function(){
-  if (checkIfWin === true) {
-    alert(modal)
-  }
-}
+// const gameWon = function(){
+//   if (checkIfWin === true) {
+//     alert(modal)
+//   }
+// }
 
 // DISPLAY
 // const modal = document.querySelector('#myModal')
@@ -102,8 +104,8 @@ function playGame(event, cell) {
       playerArray1[gridId].push(parseInt(cellId))
 
       // If winner:
-      // console.log(checkIfWin(playerArray1))
-      if (checkIfWin(playerArray1) === true)
+      console.log(playerArray1)
+      if (checkIfWin(playerArray1[gridId]) === true)
         setTimeout(() => alert("Player 1 winner"),50)
             
       // console.log(playerArray1)
@@ -112,8 +114,8 @@ function playGame(event, cell) {
       cell.innerHTML === ('O')
       playerArray2[gridId].push(parseInt(cellId))
       
-      console.log(checkIfWin(playerArray2))
-      if (checkIfWin(playerArray2) === true)
+      console.log(playerArray2)
+      if (checkIfWin(playerArray2[gridId]) === true)
         setTimeout(() => alert("Player 2 winner"), 50)               
     }
     
@@ -131,14 +133,15 @@ function playGame(event, cell) {
   
         
   // clears the innerBoards cell
-  restartGame.addEventListener('click', () => {
-    cell.innerHTML = ''
-  })
+  // restartGame.addEventListener('click', () => {
+  //   cell.innerHTML = ''
+  // })
   // console.log(playGame(event, cell))
   console.log(event.target.innerHTML)
   console.log(event.target.parentElement)
 }
 
+console.log(checkIfWin)
 
 
 // GAME SET UP / CLICK EVENT TO PLAY

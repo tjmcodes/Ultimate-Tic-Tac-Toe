@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Varela Round', sans-serif;
 }
 
 body {
@@ -44,9 +45,9 @@ h1 {
 
 .grids {
   display: flex;
-  border: 1px solid lightgrey;
+  /* border: 1px solid lightgrey;
   flex-wrap: wrap;
-  flex-grow: 1;
+  flex-grow: 1; */
 }
 
 .cells {
