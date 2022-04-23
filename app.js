@@ -193,7 +193,7 @@ function playGame(event, cell) {
         gridArray1.push(parseInt(gridId))
         checkBoardWin(gridArray1) === true
         disabledBoards.push(parseInt(gridId))
-        parentElement.classList.add('highlight-blue')
+        parentElement.classList.add('highlight-red')
         scoresListX.innerHTML = gridArray1.length
         gameStart = true
       }    
@@ -207,7 +207,7 @@ function playGame(event, cell) {
         gridArray2.push(parseInt(gridId))
         checkBoardWin(gridArray2) === true
         disabledBoards.push(parseInt(gridId))
-        parentElement.classList.add('highlight-red')
+        parentElement.classList.add('highlight-blue')
         scoresListO.innerHTML = gridArray2.length
         gameStart = true
       }

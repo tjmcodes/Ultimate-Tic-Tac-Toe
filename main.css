@@ -131,21 +131,6 @@ span {
   align-items: center;
 }
 
-.splashWinMini {
-  position: fixed;
-  width: 45vw;
-  height: 52vh;
-  background-color: #100215;
-  z-index: 1;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 26vh;
-  margin-top: 207px;
-  margin-left: 300px;
-  justify-content: space-evenly;
-}
 
 .splashWin {
   position: fixed;
