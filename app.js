@@ -268,7 +268,7 @@ function playGame(event, cell) {
     }
 
     if ((!gameStart) && (playerArray1[gridId].length + playerArray2[gridId].length  === 9))
-    document.querySelector(`.grids-${lastTurn}`).classList = 'tie'
+    parentElement.classList.add('tie')
     // console.log(disabledBoard.includes(parseInt(cellId)))
     
     if (!gameStart) {
