@@ -216,32 +216,6 @@ span {
 }
 
 /* HIGHTLIGHT BOARDS WON BY PLAYER */
-.hoverX {
-  color: blue; 
-}
-
-.hoverO {
-  color: red }
-
-.playerX {
-  color: blue;
-}
-
-.playerO {
-  color: red;
-}
-
-.highlight-red-next {
-  transition: background-color 0.5s;
-  border-color: #001f33; 
-  background-color: rgba(255, 0, 0, 0.214);
-}
-
-.highlight-blue-next {
-  transition: background-color 0.5s;
-  border-color: #001f33; 
-  background-color: rgba(0, 0, 255, 0.214);
-}
 
 .highlight-red {
   transition: background-color 0.5s;
