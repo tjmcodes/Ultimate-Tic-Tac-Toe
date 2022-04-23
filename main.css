@@ -5,9 +5,11 @@
   font-family: 'Architects Daughter';
   margin: 0
 }
+
 body {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   /* margin: 0; */
 }
 
@@ -22,9 +24,27 @@ body {
   background-color: #100215;
   z-index: 1;
   color: white;
-  display: block;
-  text-align: center;
-  line-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  line-height: 30vh;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-color: #100215;
+  border-style: solid;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.front {
+  width: 250px;
+  height: 250px;
+  
 }
 
 .splash.display-none {
@@ -75,13 +95,12 @@ header {
 nav {
   background-color: #83f8b0cb;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 }
 
 
 h1 {
-  background-color: #3a045154;
   margin: 0px;
   font-size: 50px;
   text-shadow: 10px 8px 17px 0px rgb(0 0 0 / 75%);
@@ -90,13 +109,69 @@ h1 {
 }
 
 aside {
-  display: inline-block;
+  width: 176px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   font-size: x-large;
   background-color: wheat;
-  margin: 0px;
+  margin: 18px;
   padding: 10px;
-  padding-bottom: 100px;
+  padding-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  width: 100px;
+  height: 50px;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  font-size: large;
+  margin: 0;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.splashWinMini {
+  position: fixed;
+  width: 45vw;
+  height: 52vh;
+  background-color: #100215;
+  z-index: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 26vh;
+  margin-top: 207px;
+  margin-left: 300px;
+  justify-content: space-evenly;
+}
+
+.splashWin {
+  position: fixed;
+  width: 40vw;
+  height: 50vh;
+  background-color: #100215;
+  z-index: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 28vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.none {
+  display: none;
 }
 
 
@@ -116,7 +191,7 @@ aside {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
+  /* height: 100%; */
   justify-content: center;
   height: 600px;
   width: 600px;
@@ -124,11 +199,9 @@ aside {
 }
 
 
-.grids {
-  display: flex;
-  }
 
 .grid div {
+  display: flex;
   border: 1px solid #300241da;
   flex-wrap: wrap;
   flex-grow: 1;
@@ -139,6 +212,7 @@ aside {
 
 .cells {
   display: flex;
+  flex-wrap: wrap;
   border: 1.5px solid #5187f4da;
   align-items: center;
   justify-content: center;
@@ -169,10 +243,16 @@ aside {
   background-color: rgba(255, 0, 0, 0.214);
 }
 
+.highlight-blue-next {
+  transition: background-color 0.5s;
+  border-color: #001f33; 
+  background-color: rgba(0, 0, 255, 0.214);
+}
+
 .highlight-red {
   transition: background-color 0.5s;
   border-color: #001f33; 
-  background-color: rgba(255, 0, 0, 0.726);
+  background-color: rgba(255, 0, 0, 0.726) !important;
 }
 
 .highlight-blue {

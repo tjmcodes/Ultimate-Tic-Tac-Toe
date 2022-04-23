@@ -14,35 +14,45 @@
   <body>
 
     <div class="splash">
-      <h2 class="fade-in">Ultimate Tic-Tac-Toe
-        <p class="begin-game">BEGIN THE GAME</p>
-      </h2>
       
+      <h2 class="fade-in">Ultimate Tic-Tac-Toe</h2>
+      <img class="front" src="/Media/LOGO.png" alt="Logo">  
+      <p class="begin-game">BEGIN THE GAME</p>
+          
     
     </div>  
   
-    <header>
-      <nav>   
-        <audio src=""></audio>
-        <button class="musicButton">Music <br>On/Off</button> 
-      </nav>
-    </header>
+    <nav>
+        <img class="logo" src="/Media/2.png" alt="Logo">   
+        <h1>Ultimate Tic-Tac-Toe</h1>
+        <audio id="music" src=""></audio>
+        <button class="musicButton"></button> 
+    </nav>
+  
 
   <main>  
     <section>
-      <h1>Ultimate Tic-Tac-Toe</h1>
       <div class="grid-wrapper">
-        <aside>Player 1 <br><span>X</span></aside>
+        <aside>Player X <br><span class="player-1"></span></aside>
         
         <div class="grid" id="innerCell"></div>
-        <aside>Player 2 <br><span>O</span></aside>
+        <aside>Player O <br><span class="player-2"></span></aside>
       
       </div>  
     </section>
   </main>    
 
-
-    
+  <div class="splashWin none">
+      
+    <h2 class="fade-in">GAME OVER!!</h2>
+  
+  </div>  
+  
+  <div class="splashWinMini none">
+      
+    <h2 class="fade-in">Player <span class="playerWins"></span>wins</h2>
+  
+  </div> 
 
   <footer>
     <button class="reset">RESTART</button>
