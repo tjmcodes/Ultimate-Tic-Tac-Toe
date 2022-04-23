@@ -20,6 +20,7 @@ const audioMusic = document.querySelector('#music')
 const musicButton = document.querySelector('.musicButton')
 audioMusic.muted = true
 audioMusic.loop = true
+audioMusic.src = '.sounds/Alpha.wav'
 
 let muted = true
 
@@ -27,7 +28,7 @@ function musicToggle() {
   muted = !muted
   if (muted) {
     audioMusic.muted = true
-    audioMusic.loop = false
+    // audioMusic.loop = false
     musicButton.textContent = 'UNMUTE'
   } else if (!muted) {
     audioMusic.muted = false
