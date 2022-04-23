@@ -20,7 +20,7 @@ const audioMusic = document.querySelector('#music')
 const musicButton = document.querySelector('.musicButton')
 audioMusic.muted = true
 audioMusic.loop = true
-audioMusic.src = '.sounds/Alpha.wav'
+audioMusic.src = 'sounds/Alpha.wav'
 
 let muted = true
 
@@ -28,7 +28,7 @@ function musicToggle() {
   muted = !muted
   if (muted) {
     audioMusic.muted = true
-    // audioMusic.loop = false
+    audioMusic.loop = false
     musicButton.textContent = 'UNMUTE'
   } else if (!muted) {
     audioMusic.muted = false
@@ -118,8 +118,8 @@ function checkBoardWin(gridsToCheck) { // Parameter name of gridsToCheck
     })
     if (!alerted && gridsToCheck.length === 3) {
       alerted = true
-      setTimeout(() => splashWin.classList.remove('none'),5000)
-      clearBoard()
+      setTimeout(() => splashWin.classList.remove('none'),1000)
+      setTimeout(() => (clearBoard()),5000) 
     } else {
       console.log("no win")
     }

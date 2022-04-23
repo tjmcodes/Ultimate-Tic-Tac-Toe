@@ -77,14 +77,6 @@ h2 {
   font-size: 50px;
 }
 
-/* p { 
-  justify-content: center;
-  color: wheat;
-  font-size: 30px;
-  text-decoration: overline;
-  display: block;
-  margin: auto;
-} */
 
 header {
   display: inline;
@@ -157,8 +149,10 @@ span {
 
 .splashWin {
   position: fixed;
-  width: 40vw;
-  height: 50vh;
+  width: 54vw;
+  height: 56vh;
+  top: 24%;
+  right: 22%;
   background-color: #100215;
   z-index: 1;
   color: white;
