@@ -20,7 +20,7 @@ const audioMusic = document.querySelector('#music')
 const musicButton = document.querySelector('.musicButton')
 audioMusic.muted = true
 audioMusic.loop = true
-audioMusic.src = './sounds/Alpha.wav'
+audioMusic.src = '.sounds/Alpha.wav'
 
 let muted = true
 
@@ -28,6 +28,7 @@ function musicToggle() {
   muted = !muted
   if (muted) {
     audioMusic.muted = true
+    audioMusic.loop = false
     musicButton.textContent = 'UNMUTE'
   } else if (!muted) {
     audioMusic.muted = false
@@ -204,7 +205,7 @@ function playGame(event, cell) {
   const cellId = cell.id
   const clickCell = cell.innerHTML.length
   const nextBoard = document.querySelector(`.grids-${lastTurn}`)
-  const splashWinMini = document.querySelector('.splashWinMini.none') 
+  // const splashWinMini = document.querySelector('.splashWinMini.none') 
 
   console.log(nextBoard)
   // console.log(!disabledBoard.includes(parseInt(parent)), gridId)
@@ -265,6 +266,9 @@ function playGame(event, cell) {
     if (!gameStart) {
     document.querySelector(`.grids-${lastTurn}`).style.backgroundColor = 'white'
     }
+
+    if ((!gameStart) && (playerArray1[gridId].length + playerArray2[gridId].length  === 9))
+    document.querySelector(`.grids-${lastTurn}`).classList = 'tie'
     // console.log(disabledBoard.includes(parseInt(cellId)))
     
     if (!gameStart) {

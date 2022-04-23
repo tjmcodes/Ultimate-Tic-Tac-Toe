@@ -258,7 +258,7 @@ span {
 .highlight-blue {
   border-color: #001f33; 
   transition: background-color 0.5s;
-  background-color: rgba(0, 0, 255, 0.766);
+  background-color: rgba(0, 0, 255, 0.766) !important;
 }
 
 .tie {
