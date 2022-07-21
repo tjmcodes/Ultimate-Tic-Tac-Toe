@@ -18,7 +18,6 @@ You can play the game by clicking [here.](https://tjmcodes.github.io/Ultimate-Ti
   <a href="https://ibb.co/4pSTZTz"><img src="https://i.ibb.co/VTCSWSR/Ultimate-Tic-Tac-Toe-Landing-Page.png" alt="Ultimate-Tic-Tac-Toe-Landing-Page" border="0"></a>
 </div>
 
-<br>
 
 ### The Brief
 
@@ -46,6 +45,7 @@ To win a grid, you have to win three cells in a row.
 The player can only move in the grid that is highlighted. 
 If the grid is not highlighted, this indicates 'open play' and the player can click on any cells that are available. 
 
+---
 
 ## The Approach
 To get started with planning how to create my game, I was required to provide an mp3 checklist of the goals taht would need to be achieved. I prioritised setting out to achieve the functionaility and basic styling to get the app working for the MVP deadline.  Then the following week would be put aside for styling. 
@@ -200,10 +200,10 @@ function clickAnywhere(parent, clickCell) {
 
 `lastTurn` is declared as a global variable which is set to 0 but doesn't get used because this is set to the OR operator in the function above. Once the game starts the `lastTurn` is then reassigned based on the player's clicked `cell.parentElement`.
 
-
+---
 
 ### WINS
-Being able to implement the functionalities set out in MVP as well as some stretch goals. I was particularly happy with the styling that makes use of pop up/splash screens and incorporates semantic elements. 
+Being able to implement the functionalities set out in MVP as well as some stretch goals. I was particularly happy with the styling with regards to learning how to create a pop up/splash screens and to incorporate semantic elements. 
 
 
 
@@ -268,6 +268,7 @@ Being able to successfully execute the basic functions which were covered in my 
 I learned a lot about how I work. The times of the day when I was most productive with my current work schedule and also how to organise my workflows and set ups. 
 With regards to the coding aspect, I was proud to have achieved what I did in the time constraints I had. It was a great challenge and a deep dive in implementing logic and programming using JavaScript.  Moving forward, I would like to find a way to work on improving the styling for my projects. 
 
+---
 
 <!-- Stats -->
 <div align='center'>
