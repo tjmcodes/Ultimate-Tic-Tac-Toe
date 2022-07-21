@@ -5,7 +5,7 @@
 </div>
 
 
-# Ultimate Ultimate Tic-Tac-Toe 🕹
+# Project 1: Ultimate Ultimate Tic-Tac-Toe 🕹
 
 
 ## The Overview
