@@ -7,9 +7,34 @@
 
 # Project 1: Ultimate Ultimate Tic-Tac-Toe 🕹
 
+## Contents 
+1. [Project Overview](#projectoverview)
+2. [Demo of the App](#app)
+3. [Project Brief](#project-brief)
+4. [Technologies used](#tech-used)
+5. [Game Rules](#rules)
+6. [Approach](#approach)
+7. [The Board](#board)
+8. [Game Play](#play)
+9. [Player Turns](#turns)
+10. [Winning Combinations](#win-combo)
+11. [Big Win](#big-win)
+12. [Disabled Board](#disabled-board)
+13. [Players can Click Anywhere](click-anywhere)
+14. [Wins](#wins)
+15. [Challenges](#Challenges)
+16. [Bugs adn Future Improvements](#bugs)
+17. [What have I learned?](#What-have-i-learned)
+18. [Authors](#authors)
 
-## The Overview
+
+
+<div id='projectoverview'></div>
+
+## Project Overview
 A grid based turn-play game developed using HTML, CSS and Javascript. 
+
+<div id='app'></div>
 
 ## Demo of the App
 You can play the game by clicking [here.](https://tjmcodes.github.io/Ultimate-Tic-Tac-Toe/)
@@ -18,8 +43,9 @@ You can play the game by clicking [here.](https://tjmcodes.github.io/Ultimate-Ti
   <a href="https://ibb.co/4pSTZTz"><img src="https://i.ibb.co/VTCSWSR/Ultimate-Tic-Tac-Toe-Landing-Page.png" alt="Ultimate-Tic-Tac-Toe-Landing-Page" border="0"></a>
 </div>
 
+<div id='project-brief'></div>
 
-### The Brief
+### Project Brief
 
 - Render a game in the browser
 - Design logic for winning & losing
@@ -29,6 +55,8 @@ You can play the game by clicking [here.](https://tjmcodes.github.io/Ultimate-Ti
 - Deploy your game online, where the rest of the world can access it
 - Use best practices when developing in HTML (semantic tags etc.)
 
+<div id='tech-used'></div>
+
 ### Technologies Used
 
 * HTML5 & CSS3
@@ -36,6 +64,10 @@ You can play the game by clicking [here.](https://tjmcodes.github.io/Ultimate-Ti
 * Git & GitHub
 * Canva (Logo)
 * Excalidraw and Miro
+
+---
+
+<div id='rules'></div>
 
 ### Game Rules
 Ultimate tic-tac-toe has 9 grids with 9 cells. 
@@ -47,6 +79,8 @@ If the grid is not highlighted, this indicates 'open play' and the player can cl
 
 ---
 
+<div id='approach'></div>
+
 ## The Approach
 To get started with planning how to create my game, I was required to provide an mp3 checklist of the goals taht would need to be achieved. I prioritised setting out to achieve the functionaility and basic styling to get the app working for the MVP deadline.  Then the following week would be put aside for styling. 
 
@@ -54,7 +88,11 @@ To get started with planning how to create my game, I was required to provide an
   <a href="https://ibb.co/6chFnxZ"><img src="https://i.ibb.co/1YVTv5n/MVP-checklist-for-TTT.png" alt="MVP-checklist-for-TTT" border="0"></a>
 </div>
 
-### THE BOARD
+---
+
+<div id='board'></div>
+
+### The Board
 
 A dynamic grid is created by using Javascript and the DOM `createGrid()` 
 HTML `div` function with nested for loops. 
@@ -63,13 +101,20 @@ HTML `div` function with nested for loops.
 2. Create grids (within container) -> `const grids = document.createElement('div')`
 3. Create cells (within grids) -> `const cell = document.createElement('div')`
 
-### GAME PLAY
+---
+
+<div id='play'></div>
+
+### Game Play
 
 Essentially the game starts when a player clicks on a cell once the grid has been created. An addEventListener is added as part of the nested for loop in the `createGrid()` function. 
 The event listener pases the 'click' and the cell variable as arguments to the `playGame()` function. 
 
+---
 
-### PLAYER TURN
+<div id='turns'></div>
+
+### Player Turn
 
 Each player clicks on a cell to insert an "X" or an "O" with an addEventListener in the gamePlay function. A `swapTurns()` function proves handy for this turn based game.
 
@@ -105,8 +150,11 @@ const playerArray2 = [[],[],[],[],[],[],[],[],[]]
     }      
 ``` 
 
+---
 
-### WINNING COMBINATION
+<div id='win-combo'></div>
+
+### Winning Combinations
 
 State the winning variables: 
 
@@ -138,8 +186,11 @@ const checkIfWin = playerArray =>
 
 `if (checkIfWin(playerArray1[gridId]) === true)`
 
+---
 
-### BIG WIN
+<div id='big-win'></div>
+
+### Big Win
 
 To work out the 'BIG WIN'; where the grids are won using any of the `winningCombinations` another global variable (an array) where the `gridIds` of the cell clicks were pushed to.  
 
@@ -177,12 +228,17 @@ if (checkIfWin(playerArray1[gridId]) === true) {
 
 The alert for 'Game Won' appeared 8 times. In the `checkBoardWin` function the alerts were nested as part of the if statement. Had the alerts been written outside of this scope it would not have been part of the check where the winning combination was filtering through each of the 8 combinations.
 
-### DISABLED BOARD
+---
+
+<div id='disabled-board'></div>
+
+### Disabled Board
 
 Following on from previous logic, the winning gridId then gets pushed to an array `disabledBoard` so that this can be used as an argument in the `clickAnywhere` function. 
 
+<div id='click-anywhere'></div>
 
-### PLAYERS CAN CLICK ANYWHERE... 
+### Players can Click Anywhere... 
 
 If the...  
 `cell.innerHTML.length === 0`
@@ -202,12 +258,15 @@ function clickAnywhere(parent, clickCell) {
 
 ---
 
-### WINS
+<div id='wins'></div>
+
+### Wins
 Being able to implement the functionalities set out in MVP as well as some stretch goals. I was particularly happy with the styling with regards to learning how to create a pop up/splash screens and to incorporate semantic elements. 
 
 
+<div id='challenges'></div>
 
-### CHALLENGES: 
+### Challenges
 The biggest challenge for me was getting to grips with the naming conventions. Quite often this would catch me out as I was expecting a single element but instead received an array of strings etc. An example where this proved to be problematic was: 
 
 Selecting the .grids to apply styling: 
@@ -247,8 +306,9 @@ grid-1 using:
 </div>
 
 
+<div id='bugs'></div>
 
-### BUGS / Moving forward
+### Bugs and Future Improvements
 - Debug audio element
 - AI functionality, player versus computer mode. 
 - Change colours of the highlight board option to include when any board is in play 
@@ -260,11 +320,14 @@ Styling the grid plays differently. Ie. When all of the board is in play the gri
 
 Audio element not working, due to the limitation file size of github audio. Use url instead of the file stored in the project. 
 
+<div id='what-did-i-learn'></div>
 
-### WHAT DID I LEARN?
+### What Did I Learn?
 When planning and setting up a sprint for MVP for my game, I was too ambitious. There were a few iterations of the proposed checklist as I had missed out fundamental steps. Being in discussion with the teacher provided a useful learning experience as I was able to discuss transparently. Being encouraged to think about what I was trying to achieve and by breaking down the logic proved to be an overwhelming challenge. 
+
 This was the first project where I was learning to use what I had learned in class and apply it for a project. I struggled initially to make the connections from what I did in class is in fact the logic that I would be using to create my grid base game. 
 Being able to successfully execute the basic functions which were covered in my class notes took time. In hindsight, I would have been a bit kinder to myself and taken breaks more often. I realised that when I was stuck on debugging issues, I often found that once I had rested and approached the issue the next morning, I was able to resolve them. 
+
 I learned a lot about how I work. The times of the day when I was most productive with my current work schedule and also how to organise my workflows and set ups. 
 With regards to the coding aspect, I was proud to have achieved what I did in the time constraints I had. It was a great challenge and a deep dive in implementing logic and programming using JavaScript.  Moving forward, I would like to find a way to work on improving the styling for my projects. 
 
