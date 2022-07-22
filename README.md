@@ -25,7 +25,6 @@
 15. [Challenges](#Challenges)
 16. [Bugs adn Future Improvements](#bugs)
 17. [What have I learned?](#What-have-i-learned)
-18. [Authors](#authors)
 
 
 
