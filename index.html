@@ -5,9 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css">
-  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Varela+Round&display=swap" rel="stylesheet">
-  <script defer src="app.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;900&display=swap" rel="stylesheet">
+<script defer src="app.js"></script>
   
   <title>Ultimate Tic-Tac-Toe</title>
 </head>
@@ -17,7 +18,7 @@
       
       <h2 class="fade-in">Ultimate Tic-Tac-Toe</h2>
       <img class="front" src="Media/LOGO.png" alt="Logo">  
-      <p class="begin-game">BEGIN THE GAME</p>
+      <p class="begin-game">Click to begin game</p>
           
     
     </div>  
@@ -33,25 +34,21 @@
   <main>  
     <section>
       <div class="grid-wrapper">
-        <aside>Player X <br><span class="player-1"></span></aside>
-        
-        <div class="grid" id="innerCell"></div>
-        <aside>Player O <br><span class="player-2"></span></aside>
-      
+        <aside style="color: black">Player X <br><span class="player-1"></span></aside>
+        <aside style="color: black">Player O <br><span class="player-2"></span></aside>
       </div>  
+      
+      <div class="grid" id="innerCell"></div>
+    
     </section>
   </main>    
 
-  <div class="splashWin none">
-      
+  <div class="splashWin none">    
     <h2 class="fade-in">GAME OVER!!</h2>
-  
   </div>  
   
-  <div class="splashWinMini none">
-      
+  <div class="splashWinMini none">  
     <h2 class="fade-in">Player <span class="playerWins"></span>wins</h2>
-  
   </div> 
 
   <footer>

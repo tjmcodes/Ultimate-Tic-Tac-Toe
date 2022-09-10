@@ -31,3 +31,13 @@ To win a grid, you have to win three cells in a row.
 The player can only move in the grid that is highlighted. 
 If the grid is not highlighted, this indicates 'open play' and the player can click on any cells that are available. 
 
+### The Approach
+
+THE BOARD
+1. Create grid (container)
+2. Create grids (within container)
+3. Create cells (within grids) 
+
+PLAYER TURN
+
+

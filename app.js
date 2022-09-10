@@ -13,8 +13,6 @@ const grid = document.querySelector('.grid')
 const width = 3
 const cellCount = width * width
 
-// HIGHLIGHT BOARD WON
-
 // AUDIO MENU OPTIONS
 const audioMusic = document.querySelector('#music')
 const musicButton = document.querySelector('.musicButton')
@@ -114,7 +112,7 @@ function checkBoardWin(gridsToCheck) { // Parameter name of gridsToCheck
     })
     if (!alerted && gridsToCheck.length === 3) {
       alerted = true
-      setTimeout(() => splashWin.classList.remove('none'),1000)
+      setTimeout(() => splashWin.classList.remove('none'),50)
       setTimeout(() => (clearBoard()),5000) 
     } else {
       console.log("no win")
@@ -132,7 +130,6 @@ const scoresListO = document.querySelector('.player-2')
 
 
 // GAME SET UP / CLICK EVENT TO PLAY
-
 function createGrid() {
   // creating an element div and adding a class called 'bigBoard' with 9 grids
   for (let index = 0; index < cellCount; index++) {
@@ -157,7 +154,6 @@ function createGrid() {
     grid.appendChild(grids) 
   }
 }
-  
 createGrid()
 
 // OPEN BOARD OPTION (CLICK)
@@ -176,6 +172,7 @@ function playGame(event, cell) {
   const gridId = cell.parentElement.id
   const cellId = cell.id
   const clickCell = cell.innerHTML.length
+  const highlightGrids = parentElement
 
   if ((clickAnywhere(gridId, clickCell)) && (!disabledBoards.includes(parseInt(gridId)))) {
     cell.innerHTML = playerTurn
@@ -216,6 +213,13 @@ function playGame(event, cell) {
     lastTurn = parseInt(event.target.id)
     // HIGHTLIGHT CLASSLIST
     // ! This code changes the next grids background to red. You can use a class also, just did this because its quicker.
+    // if (gameStart) {
+    //   console.log(grids)
+    //   console.log(disabledBoards)
+    //   console.log(highlightPlayable)
+    //   highlightPlayable.style.backgroundColor = 'white'
+    // }
+    
     if (!gameStart) {
     document.querySelector(`.grids-${lastTurn}`).style.backgroundColor = 'white'
     }
