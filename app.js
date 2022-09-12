@@ -221,7 +221,7 @@ function playGame(event, cell) {
     // }
     
     if (!gameStart) {
-    document.querySelector(`.grids-${lastTurn}`).style.backgroundColor = 'white'
+    document.querySelector(`.grids-${lastTurn}`).style.backgroundColor = 'lightblue'
     }
 
     if ((!gameStart) && (playerArray1[gridId].length + playerArray2[gridId].length  === 9))
