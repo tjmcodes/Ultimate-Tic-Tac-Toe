@@ -216,22 +216,22 @@ span {
   display: flex;
   flex-wrap: wrap;
   background-color: rgba(255, 255, 255, 0.709);
-  height: 100%;
+  /* height: 100%; */
   justify-content: center;
-  /* height: 600px; */
-  /* width: 300px; */
+  height: 700px;
+  width: 60%;
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 25px;
   padding-top: 25px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 20%;
+  /* margin-right: 200px; */
 }
 
 .grid div {
   border: 1px solid rgba(0, 0, 0, 0);
   padding: 10px; 
-  height: 300px;
+  /* height: 300px; */
   /* width: 200px; */
 }
 
@@ -315,7 +315,7 @@ button {
   }
   .grid {
     /* padding: 50px;   */
-    height: 700px;
+    height: 600px;
     width: 100%;
     margin: 0px;
   }  
@@ -329,7 +329,7 @@ button {
     font-size: xx-large;
   }
   .grid {
-    padding: 10px;  
+    padding: 20px;  
     height: 700px;
     width: 100%;
     margin: 0px;
@@ -411,6 +411,9 @@ button {
     width: 390px;
     margin: 5px;
   }  
+  .cells {
+    font-size: medium;
+  }
 }
 
 
