@@ -107,7 +107,7 @@ HTML `div` function with nested for loops.
 ### Game Play
 
 Essentially the game starts when a player clicks on a cell once the grid has been created. An addEventListener is added as part of the nested for loop in the `createGrid()` function. 
-The event listener pases the 'click' and the cell variable as arguments to the `playGame()` function. 
+The event listener passes the 'click' and the cell variable as arguments to the `playGame()` function. 
 
 ---
 
