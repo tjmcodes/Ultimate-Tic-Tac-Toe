@@ -81,7 +81,7 @@ If the grid is not highlighted, this indicates 'open play' and the player can cl
 <div id='approach'></div>
 
 ## The Approach
-To get started with planning how to create my game, I was required to provide an mp3 checklist of the goals taht would need to be achieved. I prioritised setting out to achieve the functionaility and basic styling to get the app working for the MVP deadline.  Then the following week would be put aside for styling. 
+To get started with planning how to create my game, I was required to provide an MVP checklist of the goals taht would need to be achieved. I prioritised setting out to achieve the functionaility and basic styling to get the app working for the MVP deadline.  Then the following week would be put aside for styling. 
 
 <div align='center'>
   <a href="https://ibb.co/6chFnxZ"><img src="https://i.ibb.co/1YVTv5n/MVP-checklist-for-TTT.png" alt="MVP-checklist-for-TTT" border="0"></a>
